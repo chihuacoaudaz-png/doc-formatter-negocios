@@ -1,0 +1,121 @@
+# ---------------------------------------------------------------------------
+# Office / binary documents
+# Source documents and generated documents are NOT versioned here: they are
+# large, they diff badly, and they usually carry personal data (student names,
+# ID numbers, signatures). Keep them out of the repo.
+# ---------------------------------------------------------------------------
+*.docx
+*.doc
+*.docm
+*.dotx
+*.dot
+*.rtf
+*.odt
+*.xlsx
+*.xls
+*.xlsm
+*.ods
+*.pptx
+*.ppt
+*.odp
+
+# Exception: test fixtures. Golden outputs and DOCX inputs for the reformatting
+# front end are part of the test suite, so they must be tracked. Keep them
+# small — for a large document, assert against the unzipped canonicalised XML
+# rather than committing the package (see docs/09-testing-strategy.md).
+!fixtures/**/*.docx
+
+# Word / Office lock and recovery files
+~$*
+.~lock.*#
+*.wbk
+*.asd
+
+# ---------------------------------------------------------------------------
+# Generated output
+# ---------------------------------------------------------------------------
+out/
+build/
+dist/
+output/
+artifacts/
+build_output/
+renders/
+*.pdf
+!docs/**/*.pdf
+
+# LaTeX intermediates
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.synctex.gz
+*.bbl
+*.blg
+*.run.xml
+*.fdb_latexmk
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---------------------------------------------------------------------------
+# Node
+# ---------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------------------------------------------------------------------------
+# Secrets and local config
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---------------------------------------------------------------------------
+# Nested independent repositories
+# ---------------------------------------------------------------------------
+Thesis-writer-agent/
+
+# ---------------------------------------------------------------------------
+# Local tool binaries (e.g. a user-installed Pandoc)
+# ---------------------------------------------------------------------------
+.tools/
+
+# ---------------------------------------------------------------------------
+# Editors and OS
+# ---------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo

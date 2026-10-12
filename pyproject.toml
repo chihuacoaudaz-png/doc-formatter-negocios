@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doc-formatter"
+version = "0.1.0"
+description = "Parse structured academic content into a format-independent document model"
+requires-python = ">=3.11"
+dependencies = ["markdown-it-py>=3,<5", "PyYAML>=6,<7", "lxml>=5,<7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+doc-formatter = "doc_formatter.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

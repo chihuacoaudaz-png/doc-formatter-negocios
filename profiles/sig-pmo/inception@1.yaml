@@ -1,0 +1,70 @@
+# Perfil Institucional y Corporativo SIG-PMO (Propuesta Técnica y Pre-Factibilidad).
+# Diseñado para propuestas técnicas, pre-informes ejecutivos y business cases.
+# Inspira su tipografía y jerarquía en estándares editoriales de revistas científicas y LaTeX.
+id: sig-pmo/inception@1
+renderer: docx-pandoc
+styles:
+  page:
+    size: A4
+    margins: {top: 2.5cm, bottom: 2.5cm, left: 2.5cm, right: 2.5cm}
+    default_tab_stop: 1.25cm
+    footer: {role: page_number, field: PAGE}
+  roles:
+    normal: {font: Palatino Linotype, size: 10.5pt, line_spacing: 1.15, align: justify, space_after: 4pt, docx_style: Normal}
+    body: {font: Palatino Linotype, size: 10.5pt, line_spacing: 1.15, align: justify, first_line_indent: 0, space_after: 6pt, docx_style: PARRAFOS}
+    body_standalone: {inherits: body, docx_style: NORMALES}
+    chapter_title: {font: Palatino Linotype, size: 14pt, bold: true, align: left, space_after: 8pt, keep_next: true, page_break_before: true, docx_style: TITU1}
+    top_level_section_title: {inherits: chapter_title, docx_style: TITU1}
+    heading_2: {inherits: body_standalone, size: 12pt, bold: true, space_after: 4pt, keep_next: true, docx_style: TITU2}
+    heading_3: {inherits: heading_2, size: 11pt, italic: true, space_after: 3pt, docx_style: TITU3}
+    heading_4: {inherits: body, size: 10.5pt, bold: true, keep_next: true, docx_style: TITU4}
+    heading_5: {inherits: heading_4, italic: true, docx_style: TITU5}
+    list_item: {inherits: body, left_indent: 1.0cm, hanging_indent: 0.5cm, space_after: 3pt, docx_style: LISTA}
+    equation: {font: Palatino Linotype, size: 10.5pt, align: center, docx_style: Equation}
+    table_label: {font: Palatino Linotype, size: 9.5pt, bold: true, keep_next: true, docx_style: XTABLAS}
+    table_title: {font: Palatino Linotype, size: 9.5pt, italic: true, line_spacing: 1.0, keep_next: true, docx_style: X1}
+    table_header: {font: Palatino Linotype, size: 9.5pt, align: left, line_spacing: 1.0, docx_style: X2}
+    table_cell: {font: Palatino Linotype, size: 9.5pt, align: left, line_spacing: 1.0, docx_style: X2}
+    table_note: {font: Palatino Linotype, size: 8.5pt, italic: true, line_spacing: 1.0, docx_style: X3}
+    figure_label: {font: Palatino Linotype, size: 9.5pt, bold: true, keep_next: true, docx_style: XFIGURAS}
+    figure_title: {font: Palatino Linotype, size: 9.5pt, italic: true, line_spacing: 1.0, keep_next: true, docx_style: X1}
+    figure_image: {font: Palatino Linotype, size: 9pt, align: center, line_spacing: 1.0, docx_style: XFIG}
+    figure_note: {font: Palatino Linotype, size: 8.5pt, italic: true, line_spacing: 1.0, docx_style: X3}
+    page_number: {font: Palatino Linotype, size: 10pt, align: center, docx_style: Piedepagina}
+layout:
+  - id: chapter-title-prefix
+    phase: structure
+    rule: prefix_heading
+    target: section[kind=chapter]
+    template: "{n}   {title}"
+  - id: caption-numbering
+    phase: numbering
+    rule: number_labels
+    sequences:
+      equation: {format: "({n})", scope: global, field: "SEQ Ecuacion"}
+      table: {format: "Tabla {n}", scope: global, field: "SEQ Tabla", note_label: "Nota"}
+      figure: {format: "Figura {n}", scope: global, field: "SEQ Figura", note_label: "Nota"}
+schema:
+  frontmatter:
+    required: []
+    optional: []
+  body:
+    ordered: true
+    required_chapters:
+      - {id: ficha_tecnica, title: "Ficha Técnica"}
+      - {id: resumen_ejecutivo, title: "Resumen Ejecutivo"}
+      - {id: diagnostico_operativo, title: "Diagnóstico Operativo"}
+      - {id: solucion_propuesta, title: "Solución Propuesta"}
+      - {id: alcance_servicio, title: "Alcance del Servicio"}
+      - {id: entregables, title: "Entregables"}
+      - {id: arquitectura_tecnica, title: "Arquitectura Técnica"}
+      - {id: evaluacion_economica, title: "Evaluación Económica"}
+      - {id: gobernanza, title: "Gobernanza"}
+      - {id: supuestos_riesgos, title: "Supuestos y Riesgos"}
+      - {id: cronograma_hitos, title: "Cronograma e Hitos"}
+      - {id: aceptacion_firmas, title: "Aceptación y Firmas"}
+  backmatter: {required: [], optional: []}
+  max_heading_depth: 4
+conformance:
+  - {id: seq-gapless, rule: sequences_gapless, targets: [equation, table, figure], severity: error}
+  - {id: no-raw-blocks, rule: no_node, node: Raw, severity: error}

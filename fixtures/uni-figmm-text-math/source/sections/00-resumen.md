@@ -1,0 +1,7 @@
+# Resumen
+
+Este trabajo de investigación analiza el impacto de la optimización de las mallas de perforación para voladuras de precorte en las labores de avance y desarrollo en minas subterráneas. La hipótesis sostiene que un diseño adecuado de las mallas optimizadas reducirá la sobrerotura a un máximo del 5%, lo que disminuirá los costos de sostenimiento y el tiempo de planificación. Para lograrlo, se desarrolló un software de automatización en Python, utilizando el entorno IDE Spyder, que calcula y diseña mallas de perforación de manera rápida y precisa, eliminando errores humanos y reduciendo el tiempo de cálculo.
+
+El método de investigación consistió en comparar los resultados obtenidos con una malla de perforación convencional frente a una optimizada para voladuras de precorte, evaluando su impacto en la sobrerotura, los costos operativos y el tiempo invertido en el diseño. Los resultados mostraron una reducción de la sobrerotura del 34.36% al 3.33%, lo que mejoró la eficiencia de las voladuras. Además, se observó una disminución en el costo unitario de las actividades de voladura y sostenimiento con shotcrete, resultando en un ahorro total de 169,654.23 dólares para un proyecto de 2 km.
+
+En conclusión, la implementación de la malla optimizada y el software de automatización mejoraron significativamente la seguridad, eficiencia y rentabilidad de las operaciones mineras, destacando la importancia de las tecnologías avanzadas en la optimización de los procesos de perforación y voladura en minería subterránea.

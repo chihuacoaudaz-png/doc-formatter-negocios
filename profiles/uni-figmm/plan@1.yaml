@@ -1,0 +1,86 @@
+# UNI FIGMM Plan de Tesis / Borrador profile (body chapters I–II).
+# Permite compilar entregables enfocados en la Parte Introductoria y Marco Teórico.
+id: uni-figmm/plan@1
+renderer: docx-pandoc
+styles:
+  page:
+    size: A4
+    margins: {top: 2.5cm, bottom: 2.5cm, left: 3.0cm, right: 2.5cm}
+    default_tab_stop: 1.25cm
+    footer: {role: page_number, field: PAGE}
+  roles:
+    normal: {font: Arial, size: 11pt, line_spacing: 2.0, align: justify, space_after: 0, docx_style: Normal}
+    body: {font: Arial, size: 11pt, line_spacing: 2.0, align: justify, first_line_indent: 1.27cm, space_after: 0, docx_style: PARRAFOS}
+    body_standalone: {inherits: body, first_line_indent: 0, docx_style: NORMALES}
+    chapter_title: {font: Arial, size: 14pt, bold: true, align: center, space_after: 18pt, keep_next: true, page_break_before: true, docx_style: TITU1}
+    top_level_section_title: {inherits: chapter_title, docx_style: TITU1}
+    heading_2: {inherits: body_standalone, bold: true, keep_next: true, docx_style: TITU2}
+    heading_3: {inherits: heading_2, italic: true, docx_style: TITU3}
+    heading_4: {inherits: body, keep_next: true, first_line_indent: 1.27cm, tab_stop: 3.0cm, docx_style: TITU4}
+    heading_5: {inherits: heading_4, tab_stop: 3.25cm, docx_style: TITU5}
+    list_item: {inherits: body, first_line_indent: 0, left_indent: 1.27cm, hanging_indent: 0.5cm, docx_style: LISTA}
+    equation: {font: Arial, size: 11pt, align: center, docx_style: Equation}
+    table_label: {font: Arial, bold: true, keep_next: true, docx_style: XTABLAS}
+    table_title: {font: Arial, italic: true, line_spacing: 1.0, keep_next: true, docx_style: X1}
+    table_header: {font: Arial, size: 9pt, align: center, line_spacing: 1.0, docx_style: X2}
+    table_cell: {font: Arial, size: 9pt, align: center, line_spacing: 1.0, docx_style: X2}
+    table_note: {font: Arial, size: 9pt, line_spacing: 1.0, docx_style: X3}
+    figure_label: {font: Arial, bold: true, keep_next: true, docx_style: XFIGURAS}
+    figure_title: {font: Arial, italic: true, line_spacing: 1.0, keep_next: true, docx_style: X1}
+    figure_image: {font: Arial, size: 9pt, align: center, line_spacing: 1.0, docx_style: X2}
+    figure_note: {font: Arial, size: 9pt, line_spacing: 1.0, docx_style: X3}
+    page_number: {font: Arial, size: 10pt, align: right, docx_style: Piedepagina}
+layout:
+  - id: chapter-title-prefix
+    phase: structure
+    rule: prefix_heading
+    target: section[kind=chapter]
+    template: "Capítulo {roman}. {title}"
+  - id: keywords-es
+    phase: structure
+    rule: append_paragraph
+    target: {slot: abstract_es}
+    template: "Palabras clave — {keywords_es}"
+    list_join: ", "
+    role: body_standalone
+  - id: keywords-en
+    phase: structure
+    rule: append_paragraph
+    target: {slot: abstract_en}
+    template: "Keywords — {keywords_en}"
+    list_join: ", "
+    role: body_standalone
+  - id: heading-numbering
+    phase: numbering
+    rule: number_headings
+    levels: [2, 3, 4, 5]
+    format: "{n1}.{n2}.{n3}.{n4}.{n5}"
+    separator: tab
+    run_in_levels: [4, 5]
+    run_in_title_period: true
+  - id: caption-numbering
+    phase: numbering
+    rule: number_labels
+    sequences:
+      equation: {format: "({n})", scope: global, field: "SEQ Ecuacion"}
+      table: {format: "Tabla {n}", scope: global, field: "SEQ Tabla", note_label: "Nota"}
+      figure: {format: "Figura {n}", scope: global, field: "SEQ Figura", note_label: "Nota"}
+  - id: frontmatter-body
+    phase: placement
+    rule: bind_role
+    target: {region: frontmatter, node: paragraph}
+    role: body_standalone
+schema:
+  frontmatter:
+    required: [abstract_es, abstract_en]
+    optional: [dedication, acknowledgements, introduction]
+  body:
+    ordered: true
+    required_chapters:
+      - {id: introductoria, title: Parte introductoria del trabajo}
+      - {id: marcos, title: Marcos teórico y conceptual}
+  backmatter: {required: [], optional: []}
+  max_heading_depth: 5
+conformance:
+  - {id: seq-gapless, rule: sequences_gapless, targets: [equation, table, figure], severity: error}
+  - {id: no-raw-blocks, rule: no_node, node: Raw, severity: error}

@@ -1,0 +1,74 @@
+{
+  "frontmatter_sections": 2,
+  "chapters": 5,
+  "headings_by_level": {
+    "1": 7,
+    "2": 14,
+    "3": 14,
+    "4": 10,
+    "5": 3
+  },
+  "math": {
+    "inline": 27,
+    "display_unnumbered": 1,
+    "display_numbered": 36
+  },
+  "equation_sequence": [
+    "eq:sobrerotura",
+    "eq:shotcrete",
+    "eq:profundidad-taladro",
+    "eq:avance",
+    "eq:diametro-equivalente",
+    "eq:burden-b1",
+    "eq:error-perforacion",
+    "eq:burden-practico-b1",
+    "eq:carga-lineal-q1",
+    "eq:burden-b",
+    "eq:anchura-ah",
+    "eq:burden-b2",
+    "eq:burden-b2-max",
+    "eq:limitacion-b2-max",
+    "eq:limitacion-b2-min",
+    "eq:carga-lineal-ajustada",
+    "eq:numero-cartuchos",
+    "eq:ba-max",
+    "eq:nta",
+    "eq:espaciamiento-rincon",
+    "eq:burden-practico-ba",
+    "eq:carga-fondo-qfa",
+    "eq:longitud-fondo-lcf",
+    "eq:carga-columna-qca",
+    "eq:longitud-columna-lcc",
+    "eq:presion-taladro",
+    "eq:presion-efectiva",
+    "eq:carga-contorno-qc",
+    "eq:carga-contorno-qce",
+    "eq:espaciamiento-contorno",
+    "eq:burden-teorico-contorno",
+    "eq:burden-practico-contorno",
+    "eq:long-arco",
+    "eq:ntc",
+    "eq:promedio",
+    "eq:raiz"
+  ],
+  "cross_reference_targets": [
+    "tbl:fijacion-tajeos",
+    "eq:promedio",
+    "eq:promedio",
+    "eq:raiz",
+    "eq:promedio"
+  ],
+  "images": 2,
+  "figures": 2,
+  "figure_sequence": [
+    "fig:sobrerotura",
+    "fig:perno-helicoidal"
+  ],
+  "tables": 2,
+  "table_sequence": [
+    "tbl:fijacion-tajeos",
+    "tbl:fijacion-contorno"
+  ],
+  "bullet_lists": 5,
+  "list_items": 42
+}

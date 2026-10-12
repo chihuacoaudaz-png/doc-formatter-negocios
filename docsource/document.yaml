@@ -1,0 +1,27 @@
+schema_version: 1
+profile: sig-pmo/inception@1
+language: es-PE
+meta:
+  title: "FORMATO MAESTRO: PROPUESTA TÉCNICA Y PRE-FACTIBILIDAD"
+  code: "SIG-PMO-FOR-001"
+  version: "Rev. 03"
+  period: "2026 - 2027"
+  category: "Norma Técnica Institucional"
+  status: "Base Estandarizada"
+  client: "CORPORACIÓN MINERA / INDUSTRIAL EJEMPLO"
+  author: "OFICINA DE GESTIÓN DE PROYECTOS (PMO)"
+  date: "Octubre 2026"
+body:
+  - sections/01-ficha-tecnica.md
+  - sections/02-resumen-ejecutivo.md
+  - sections/03-diagnostico-operativo.md
+  - sections/04-solucion-propuesta.md
+  - sections/05-alcance-del-servicio.md
+  - sections/06-entregables.md
+  - sections/07-arquitectura-tecnica.md
+  - sections/08-evaluacion-economica.md
+  - sections/09-gobernanza.md
+  - sections/10-supuestos-y-riesgos.md
+  - sections/11-cronograma-e-hitos.md
+  - sections/12-aceptacion-y-firmas.md
+backmatter: []

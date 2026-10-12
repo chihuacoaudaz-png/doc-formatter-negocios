@@ -1,0 +1,32 @@
+schema_version: 1
+profile: uni-figmm/thesis@1
+language: es-PE
+meta:
+  institution: Universidad Nacional de Ingeniería
+  document_kind: MUESTRA DE PRUEBA
+  title: Extractos de tesis y pruebas matemáticas
+  keywords_es:
+    - Mallas de perforación
+    - sobrerotura
+    - costos de sostenimiento
+    - voladura de precorte
+    - software de automatización
+    - Python
+  keywords_en:
+    - Drill grids
+    - overburden
+    - support costs
+    - pre-cut blasting
+    - automation software
+    - Python
+frontmatter:
+  - abstract_es: sections/00-resumen.md
+  - abstract_en: sections/00-abstract.md
+body:
+  - sections/01-parte-introductoria.md
+  - sections/02-marcos-teorico-conceptual.md
+  - sections/03-desarrollo.md
+  - sections/04-analisis-resultados.md
+  # Optional regression-only chapter (not required by the thesis profile schema).
+  - sections/05-pruebas-matematicas.md
+backmatter: []
