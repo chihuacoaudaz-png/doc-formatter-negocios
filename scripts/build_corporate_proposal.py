@@ -118,15 +118,16 @@ def build_pure_openxml_package(
     tbl_label_style = roles.get("table_label", {}).get("docx_style", "XTABLAS")
     tbl_title_style = roles.get("table_title", {}).get("docx_style", "X1")
 
-    # Metadatos genéricos con fallbacks neutros
-    title = meta.get("title", "DOCUMENTO TÉCNICO")
-    subtitle = meta.get("subtitle", "Informe Técnico")
-    code = meta.get("code", "DOC-001")
-    version = meta.get("version", "Rev. 01")
-    client = meta.get("client", "Entidad Destinataria")
-    attention = meta.get("attention", "Dirección General")
-    date_str = meta.get("date", "2026")
-    author = meta.get("author", "Autor Institucional")
+    # Metadatos genéricos con fallbacks neutros (escapados para OpenXML)
+    import html
+    title = html.escape(str(meta.get("title", "DOCUMENTO TÉCNICO")))
+    subtitle = html.escape(str(meta.get("subtitle", "Informe Técnico")))
+    code = html.escape(str(meta.get("code", "DOC-001")))
+    version = html.escape(str(meta.get("version", "Rev. 01")))
+    client = html.escape(str(meta.get("client", "Entidad Destinataria")))
+    attention = html.escape(str(meta.get("attention", "Dirección General")))
+    date_str = html.escape(str(meta.get("date", "2026")))
+    author = html.escape(str(meta.get("author", "Autor Institucional")))
 
     # 2. Cargar el documento compilado por doc_formatter (contiene styles.xml y pie de página)
     doc = docx.Document(str(raw_docx_path))
