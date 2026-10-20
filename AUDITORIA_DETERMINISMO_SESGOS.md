@@ -106,14 +106,11 @@ schema:
       - {id: ficha_tecnica, title: "Ficha Técnica"}
       - {id: resumen_ejecutivo, title: "Resumen Ejecutivo"}
       - {id: diagnostico_operativo, title: "Diagnóstico Operativo"}
-      - {id: solucion_propuesta, title: "Solución Propuesta"}
+      - {id: propuesta_valor_solucion_integral, title: "Propuesta de Valor y Solución Integral"}
       - {id: alcance_servicio, title: "Alcance del Servicio"}
-      - {id: entregables, title: "Entregables"}
       - {id: arquitectura_tecnica, title: "Arquitectura Técnica"}
-      - {id: evaluacion_economica, title: "Evaluación Económica"}
+      - {id: entregables_plazos_costos, title: "Entregables, Plazos y Estructura Económica"}
       - {id: gobernanza, title: "Gobernanza"}
-      - {id: supuestos_riesgos, title: "Supuestos y Riesgos"}
-      - {id: cronograma_hitos, title: "Cronograma e Hitos"}
       - {id: aceptacion_firmas, title: "Aceptación y Firmas"}
 ```
 
